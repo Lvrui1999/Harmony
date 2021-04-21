@@ -1,0 +1,35 @@
+0,ADD,0,r1,r2,r3,0,"ADD r1, r2, r3",r1<-r2+r3,,0
+0,ADDU,0,r1,r2,r3,1,"ADD r1, r2",r1<-r2+r3,,1
+0,SUB,0,r1,r2,r3,10,"SUB r1,r2,r3,",r1<-r2-r3,,2
+0,SUBU,0,r1,r2,r3,11,"SUBU r1, r2, r3",r1<-r2-r3,,3
+1,MUL,1,r1,r2,r3,0,"MUL r1, r2, r3",r1<-r2*r3,,4
+2,MULU,10,r1,r2,r3,0,"MULU r1, r2, r3",r1<-r2*r3,,8
+3,DIV,11,r1,r2,r3,0,"DIV r1, r2, r3",r1<-r2/ r3,,12
+4,AND,100,r1,r2,r3,0,"AND r1, r2, r3",r1<-r2&r3,,16
+5,OR,101,r1,r2,r3,0,"OR r1, r2, r3",r1<-r2|r3,,20
+6,XOR,110,r1,r2,r3,0,"XOR r1, r2, r3",r1<-r2^r3,,24
+7,NOR,111,r1,r2,r3,0,"NOR r1, r2, r3",r1<-~(r2|r3),,28
+8,SLT,1000,r1,r2,r3,0,"SLT r1, r2, r3",r1=r2<r3,,32
+9,SLTU,1001,r1,r2,r3,0,"SLTU r1, r2, r3",r1=r2<r3,,36
+10,SLL,1010,r1,r2,r3,0,"SLLV r1, r2, r3",r1=r2<<r3,,40
+11,SRL,1011,r1,r2,r3,0,"SRLV r1, r2, r3",r1=r2>>r3,,44
+12,SRA,1100,r1,r2,r3,0,"SRAV r1, r2, r3",r1=r2>>r3,,48
+13,JR,1101,r1,0,0,0,JR r1,goto r1,,
+14,ADDI,1110,r1,r2,imm(5),,"ADDI r1, r2, imm",r1=r2+imm,,
+15,ADDIU,1111,r1,r2,imm(5),,"ADDIU r1, r2, imm",r1=r2+imm,,
+16,ANDI,10000,r1,r2,imm(5),,"ANDI r1, r2, imm",r1=r2&imm,,
+17,ORI,10001,r1,r2,imm(5),,"ORI r1, r2, imm",r1=r2&imm,,
+18,XORI,10010,r1,r2,imm(5),,"XORI r1, r2, imm",r1=r2^imm,,
+19,SLLI,10011,r1,r2,imm(5),0,"SLLI r1, r2,imm",r1=r2<<sa,,
+20,SRLI,10100,r1,r2,imm(5),0,"SRLI r1, r2, sa",r1=r2>>sa,,
+21,SRAI,10101,r1,r2,imm(5),0,"SRAI r1, r2, sa",r1=r2>>sa,,
+22,LUI,10110,0,r2,imm(5),,"LUI r2, imm",r2=imm,,
+23,LW,10111,r1,r2,imm(5),,"LW r1, r2, imm",r1=M[r2+imm],,
+24,SW,11000,r1,r2,imm(5),,"SW r1, r2, imm",M[r2+imm]=r1,,
+25,BEQ,11001,r1,r2,imm(5),,"BEQ r1, r2, imm",r1=r2 then goto imm,,
+26,BNE,11010,r1,r2,imm(5),,"BNE r1, r2, imm",r1!=r2 then goto imm,,
+27,SLTI,11011,r1,r2,imm(5),,"SLTI r1, r2, imm",r1=r2<imm,,
+28,SLTIU,11100,r1,r2,imm(5),,"SLTIU r1, r2, imm",r1=r2<imm,,
+29,J,11101,imm(11),,,,J imm,,,
+30,JAL,11110,imm(11),,,,JAL imm,,,
+31,HALT,11111,,,,,HALT ,,,
